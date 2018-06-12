@@ -13,7 +13,6 @@
                     <div class="square-container">
                         <div class="contact-icon">
                             <img src="<?php echo  plugins_url('/image/phone.png', __FILE__ ) ?>">
-                            <img src="<?php echo wp_get_attachment_url(wp_kses_post($instance['left_section']['image'])); ?>">
                         </div>
                         <div class="call">
                             <h3>Call</h3>
@@ -32,8 +31,6 @@
                         <div class="contact-icon">
                             <a target="_blank" href="<?php echo $instance['right_section']['google_map_url']; ?>">
                                 <img src="<?php echo  plugins_url('/image/map.png', __FILE__ ) ?>">
-                                <img src="<?php echo  wp_get_attachment_url(wp_kses_post($instance['right_section']['image'])); ?>">
-
                             </a>
                         </div>
                         <div class="address">
