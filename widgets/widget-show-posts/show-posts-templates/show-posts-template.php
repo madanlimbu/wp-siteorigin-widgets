@@ -30,7 +30,15 @@
                 </div>
                 <?php endwhile; wp_reset_postdata(); ?>
             </div>
-        </div>
+<?php if($instance['button']['button_url']) :?>
+        <div class="row button-row">
+            <div class="col-lg-12">
+                <div class="cta">
+                    <a class="cta-button" href="<?php echo $instance['button']['button_url']; ?>"><?php echo $instance['button']['button_text']; ?></a>
+                </div>
+            </div>
+        </div><!-- .button-row -->
+        <?php endif; ?>
     </div>
 </div>
 

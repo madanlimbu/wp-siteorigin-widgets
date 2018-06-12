@@ -11,6 +11,21 @@ class Widget_Show_Posts extends SiteOrigin_Widget{
             'posts' => array(
                 'type' => 'posts',
                 'label' => __('Show some of the posts from the posts type', 'widget-form-fields-text-domain'),
+            ),
+            'button' => array(
+                'type' => 'section',
+                'label' => __( 'Button At bottom' , 'widget-form-fields-text-domain' ),
+                'hide' => true,
+                'fields' => array(
+                    'button_text' => array(
+                        'type' => 'text',
+                        'label' => __('Button Text ', 'widget-form-fields-text-domain')
+                    ),
+                    'button_url' => array(
+                        'type' => 'text',
+                        'label' => __('Button URL ', 'widget-form-fields-text-domain')
+                    )
+                )
             )
         );
 
