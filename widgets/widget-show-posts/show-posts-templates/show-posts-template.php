@@ -6,8 +6,15 @@
     if($query_result->have_posts()) :
 ?>
 
-<div class="show-posts-widget">
+<div class="show-posts-widget widget-seperator">
     <div class="container">
+        <?php if($instance['title']) : ?>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="block-title"><h2><?php echo $instance['title'] ?></h2></div>
+                </div>
+            </div>
+        <?php endif; ?>
             <div class="row">
                 <?php while($query_result->have_posts()) : $query_result->the_post(); ?>
                 <div class="col-lg-3 col-md-3 col-sm-6">

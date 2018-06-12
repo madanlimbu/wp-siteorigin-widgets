@@ -8,6 +8,10 @@
 class Widget_Show_Posts extends SiteOrigin_Widget{
     function __construct() {
         $form_options = array(
+            'title' => array(
+                'type' => 'text',
+                'label' => __('Title in this widget block', 'widget-form-fields-text-domain')
+            ),
             'posts' => array(
                 'type' => 'posts',
                 'label' => __('Show some of the posts from the posts type', 'widget-form-fields-text-domain'),
