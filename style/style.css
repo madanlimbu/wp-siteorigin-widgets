@@ -335,3 +335,14 @@ a:visited{
     left: 50%;
     transform: translateX(-50%);
 }
+
+/** Archive Page Widget */
+.archive-page-widget{
+
+}
+.archive-page-widget .featured-image-container{
+    height: calc(100vh);
+    background-size: cover , contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
