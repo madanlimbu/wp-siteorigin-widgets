@@ -147,10 +147,15 @@
 .half-by-half-contact-container{
     text-align: center;
     background-color: #f5f4f2;
+<<<<<<< HEAD
   /*  padding-top: 50px;
     padding-bottom: 50px;
     */
     padding-top: 120px;
+=======
+    padding-top: 50px;
+    padding-bottom: 50px;
+>>>>>>> c7f7d3b37d28d0ae84be9965585e900695ad2642
 }
 .half-by-half-contact-container h1{
     position: relative;

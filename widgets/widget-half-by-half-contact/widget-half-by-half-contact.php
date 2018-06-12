@@ -12,17 +12,24 @@ class Widget_Half_By_Half_Contact extends SiteOrigin_Widget{
                 'type' => 'text',
                 'label' => __('Title', 'widget-form-fields-text-domain')
             ),
+<<<<<<< HEAD
             'header_id' => array(
                 'type' => 'text',
                 'label' => __('If Minus Element Length Put Element ID', 'widget-form-fields-text-domain'),
                 'default' => 'masthead'
             ),
+=======
+>>>>>>> c7f7d3b37d28d0ae84be9965585e900695ad2642
             'left_section' => array(
                 'type' => 'section',
                 'label' => __( 'Left Contact Details' , 'widget-form-fields-text-domain' ),
                 'hide' => true,
                 'fields' => array(
+<<<<<<< HEAD
              /*       'image' => array(
+=======
+                    'image' => array(
+>>>>>>> c7f7d3b37d28d0ae84be9965585e900695ad2642
                         'type' => 'media',
                         'label' => __( 'Choose a Image Icon', 'widget-form-fields-text-domain' ),
                         'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
@@ -30,7 +37,10 @@ class Widget_Half_By_Half_Contact extends SiteOrigin_Widget{
                         'library' => 'image',//'image', 'audio', 'video', 'file'
                         'fallback' => true
                     ),
+<<<<<<< HEAD
              */
+=======
+>>>>>>> c7f7d3b37d28d0ae84be9965585e900695ad2642
                     'phone_number' => array(
                         'type' => 'text',
                         'label' => __('Phone Number ', 'widget-form-fields-text-domain')
@@ -46,7 +56,11 @@ class Widget_Half_By_Half_Contact extends SiteOrigin_Widget{
                 'label' => __( 'Right Contact Details' , 'widget-form-fields-text-domain' ),
                 'hide' => true,
                 'fields' => array(
+<<<<<<< HEAD
              /*       'image' => array(
+=======
+                    'image' => array(
+>>>>>>> c7f7d3b37d28d0ae84be9965585e900695ad2642
                         'type' => 'media',
                         'label' => __( 'Choose a Image Icon', 'widget-form-fields-text-domain' ),
                         'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
@@ -54,7 +68,10 @@ class Widget_Half_By_Half_Contact extends SiteOrigin_Widget{
                         'library' => 'image',//'image', 'audio', 'video', 'file'
                         'fallback' => true
                     ),
+<<<<<<< HEAD
              */
+=======
+>>>>>>> c7f7d3b37d28d0ae84be9965585e900695ad2642
                     'address' => array(
                         'type' => 'tinymce',
                         'label' => __('Address', 'widget-form-fields-text-domain'),

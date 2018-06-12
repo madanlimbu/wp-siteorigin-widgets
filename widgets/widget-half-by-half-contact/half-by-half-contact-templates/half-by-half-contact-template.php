@@ -12,7 +12,11 @@
                 <div class="square-box">
                     <div class="square-container">
                         <div class="contact-icon">
+<<<<<<< HEAD
                             <img src="<?php echo  plugins_url('/image/phone.png', __FILE__ ) ?>">
+=======
+                            <img src="<?php echo wp_get_attachment_url(wp_kses_post($instance['left_section']['image'])); ?>">
+>>>>>>> c7f7d3b37d28d0ae84be9965585e900695ad2642
                         </div>
                         <div class="call">
                             <h3>Call</h3>
@@ -30,7 +34,11 @@
                     <div class="square-container">
                         <div class="contact-icon">
                             <a target="_blank" href="<?php echo $instance['right_section']['google_map_url']; ?>">
+<<<<<<< HEAD
                                 <img src="<?php echo  plugins_url('/image/map.png', __FILE__ ) ?>">
+=======
+                                <img src="<?php echo  wp_get_attachment_url(wp_kses_post($instance['right_section']['image'])); ?>">
+>>>>>>> c7f7d3b37d28d0ae84be9965585e900695ad2642
 
                             </a>
                         </div>
@@ -55,6 +63,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 
     <?php if($instance['header_id']){ ?>
         <script>
@@ -64,4 +73,6 @@
             });
         </script>
     <?php } ?>
+=======
+>>>>>>> c7f7d3b37d28d0ae84be9965585e900695ad2642
 </div>
