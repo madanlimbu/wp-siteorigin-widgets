@@ -216,3 +216,59 @@
     text-decoration: none;
     margin: 12px;
 }
+
+/***Show Posts Widget **/
+.show-posts-widget{
+
+}
+.show-posts-widget .show-posts-container>.thumbnails-container{
+    margin-bottom: 130px;
+    overflow: hidden;
+}
+.show-posts-widget .show-posts-container>.thumbnails-container>a>img{
+    transition: transform 0.3s;
+}
+.show-posts-widget .show-posts-container>.thumbnails-container>a>img:hover {
+    transform: scale(1.1);
+}
+.show-posts-widget .show-posts-container h5{
+    font-size: 14px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: 26px;
+}
+.show-posts-widget .show-posts-container h3{
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 0;
+   // height: 44px;
+    font-weight: 700;
+}
+.show-posts-widget .show-posts-container h3>a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+.show-posts-widget .show-posts-container{
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    flex-flow: column-reverse;
+    position: relative;
+}
+.show-posts-widget .thumbnails-container{
+
+}
+.show-posts-widget .absolute-text-container{
+    position: absolute;
+    width: 100%;
+    min-height: 130px;
+}
+.show-posts-widget .text-container{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
