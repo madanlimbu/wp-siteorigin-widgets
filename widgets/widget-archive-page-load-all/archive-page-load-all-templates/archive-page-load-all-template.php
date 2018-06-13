@@ -89,7 +89,7 @@
                 var sendToServer = function(data){
                     $.post(ajax_url, data, function (response) {
                         console.log('respond from server');
-                        load_more.data('offset', total() + offset());
+                        load_more.data('total', total() + offset());
                         load_new_posts(response);
                     })
                 }
@@ -119,11 +119,11 @@
                                 </div>
                                 `);
                         });
-                        if(response.posts.length<total()) {
+                        if(response.posts.length<offset()) {
                             load_more.css('display', 'none');
                         }
                     }else{
-                        load_more.css('display', 'none');
+                         load_more.css('display', 'none');
                     }
                 }
 
@@ -132,8 +132,8 @@
                     console.log('flight begun');
                     var data ={
                         'action': 'ajax_pagination_widget',
-                        'total': total(),
-                        'offset': offset(),
+                        'total': offset(),
+                        'offset': total(),
                         'post_type': post_type,
                         'orderby': orderby,
                         'order': order
