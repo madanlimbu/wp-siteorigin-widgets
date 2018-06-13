@@ -8,26 +8,72 @@
 class Widget_Archive_Page_Load_All extends SiteOrigin_Widget{
     function __construct() {
         $form_options = array(
-            'posts' => array(
-                'type' => 'posts',
-                'label' => __('Show some of the posts from the posts type', 'widget-form-fields-text-domain'),
+            'post_type' => array(
+                'type' => 'text',
+                'label' => __('Post Type ', 'widget-form-fields-text-domain'),
+                'default' => 'post'
             ),
-            'button' => array(
-                'type' => 'section',
-                'label' => __( 'Button At bottom' , 'widget-form-fields-text-domain' ),
-                'hide' => true,
-                'fields' => array(
-                    'button_text' => array(
-                        'type' => 'text',
-                        'label' => __('Button Text ', 'widget-form-fields-text-domain')
-                    ),
-                    'button_url' => array(
-                        'type' => 'link',
-                        'label' => __( 'Destination URL', 'widget-form-fields-text-domain' )
-                    )
-                )
+            'total' => array(
+                'type' => 'text',
+                'label' => __('Post Per Page (Initial)', 'widget-form-fields-text-domain'),
+                'default' => '4'
+            ),
+            'offset' => array(
+                'type' => 'text',
+                'label' => __('Number of Post to load on each Load More', 'widget-form-fields-text-domain'),
+                'default' => '4'
+            ),
+            'orderby' => array(
+                'type' => 'text',
+                'label' => __('How To Order Post eg. date', 'widget-form-fields-text-domain'),
+                'default' => 'date'
+            ),
+            'order' => array(
+                'type' => 'text',
+                'label' => __('Order Post (DESC or ASC)', 'widget-form-fields-text-domain'),
+                'default' => 'DESC'
             )
         );
+
+
+        add_action('wp_ajax_ajax_pagination_widget', 'ajax_pagination_widget');
+        add_action('wp_ajax_nopriv_ajax_pagination_widget', 'ajax_pagination_widget');
+
+        function ajax_pagination_widget(){
+            $query_offset = stripslashes($_POST['offset']);
+            $query_total = stripslashes($_POST['total']);
+            $query_post_type = stripslashes($_POST['post_type']);
+            $query_orderby = stripslashes($_POST['orderby']);
+            $query_order = stripslashes($_POST['order']);
+
+            $query = array(
+                'post_type' => $query_post_type,
+                'post_status' => 'publish',
+                'orderby' => $query_orderby,
+                'order' => $query_order,
+                'posts_per_page' => $query_total,
+                'offset' => $query_offset
+            );
+
+            $query_result = new WP_Query($query);
+            $json_reply = array();
+                 if($query_result->have_posts()) :
+                     foreach ($query_result->get_posts() as $post) {
+                         $temp_array = array();
+                         $temp_array['id'] = $post->ID;
+                         if(has_post_thumbnail($post->ID)) :
+                                $temp_array['image'] = get_the_post_thumbnail($post->ID);
+                                $temp_array['image_url'] = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID))[0];
+                          endif;
+                          $temp_array['title'] = $post->post_title;
+                          $temp_array['post_excerpt'] = $post->post_excerpt;
+                         array_push($json_reply, $temp_array);
+                     }
+                endif;
+            wp_send_json(array('posts' => $json_reply));
+            die();
+        }
+
 
         parent::__construct(
             'archive-page-load-all-widget',

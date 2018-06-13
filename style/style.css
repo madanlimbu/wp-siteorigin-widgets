@@ -409,3 +409,37 @@ a:visited{
         font-size: 16px;
     }
 }
+
+/** Archive Page Load all Post **/
+.archive-page-load-all-widget span:hover{
+    cursor: pointer;
+}
+.archive-page-load-all .text {
+    overflow: hidden;
+}
+.archive-page-load-all-widget .text p {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    line-height: 26px;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+.archive-page-load-all.show-posts-widget .show-posts-container>.thumbnails-container {
+    margin-bottom: 300px;
+    overflow: hidden;
+}
+.archive-page-load-all.show-posts-widget .absolute-text-container {
+    position: absolute;
+    width: 100%;
+    min-height: 300px;
+}
+.row.archive-page-load-all-widget-posts {
+    margin-bottom: 60px;
+}
+.archive-page-load-all.show-posts-widget .show-posts-container h3 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}

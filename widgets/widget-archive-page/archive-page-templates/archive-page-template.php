@@ -6,7 +6,7 @@
     if($query_result->have_posts()) :
 ?>
         <?php while($query_result->have_posts()) : $query_result->the_post(); ?>
-<div class="archive-page-widget">
+<div class="archive-page-widget ">
     <div class="featured-image-container" style="background-image: url(<?php if( has_post_thumbnail() ) : the_post_thumbnail_url('full');  endif; ?>);" >
         <div class="texts-container">
         <!--    <h4><span><?php ?></span></h4> -->
