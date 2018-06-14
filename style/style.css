@@ -471,3 +471,23 @@ a:visited{
     height: 100%;
     position: relative;
 }
+
+/* Social Floating Widget **/
+.widget-social-floating.floating-social-bar{
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 12px;
+    background-color: black;
+}
+.widget-social-floating .link-social-float{
+    margin: 5px 0px;
+    max-width: 20px;
+}
+.widget-social-floating .link-social-float>a{
+
+}
+.widget-social-floating .link-social-float>a>img{
+    max-width: 100%;
+    vertical-align: bottom;
+}
