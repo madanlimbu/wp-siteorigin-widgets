@@ -24,7 +24,7 @@
         <div class="row archive-page-load-all-widget-posts">
             <?php while($query_result->have_posts()) : $query_result->the_post(); ?>
 
-            <div class="col-lg-3 col-md-3 col-sm-6">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-with-bottom-border">
                 <div class="show-posts-container">
                     <?php
                     if( has_post_thumbnail() ) : ?>
@@ -40,6 +40,9 @@
                             <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
                             <div class="text">
                             <p><?php if(has_excerpt()) : echo get_the_excerpt(); endif; ?></p>
+                            </div>
+                            <div class="read_arrow">
+                                <a class="arrow-only" href="<?php the_permalink() ?>">Read More</a>
                             </div>
                         </div><!-- .absolute-text-container -->
                     </div><!-- .text-container -->
@@ -57,7 +60,7 @@
                            data-post_type="<?php echo $post_type; ?>"
                            data-order="<?php echo $order; ?>"
                            data-orderby="<?php echo $orderby; ?>"
-
+                           data-sub_title="<?php echo $instance['post_sub_title']; ?>"
                         >Load More</span>
                     </div>
              </div><!-- .button-row -->
@@ -84,6 +87,7 @@
                 var post_type = load_more.data('post_type');
                 var order = load_more.data('order');
                 var orderby = load_more.data('orderby');
+                var sub_title = load_more.data('sub_title');
                 var total = function(){ return load_more.data('total'); }
                 var offset = function(){ return load_more.data('offset'); }
                 var sendToServer = function(data){
@@ -100,10 +104,10 @@
                         $.each(response.posts, function (key, value) {
                             // noinspection JSAnnotator
                             $('.archive-page-load-all-widget-posts').append(`
-                                <div class="col-lg-3 col-md-3 col-sm-6">
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-with-bottom-border">
                 <div class="show-posts-container">
                         <div class="thumbnails-container">
-                            <a href="#">` +
+                            <a href="`+value.post_url+`">` +
                                 value.image
                                     + `
                             </a>
@@ -112,7 +116,14 @@
                                 <div class="text-container">
                                 <h5>`+value.sub_title+`</h5>
                                 <h3><a href="`+`">`+value.title+`</a></h3>
-                               <h5>`+value.post_excerpt+`</h5>
+
+                                 <div class="text">
+                            <p>`+value.post_excerpt+`</p>
+                            </div>
+                            <div class="read_arrow">
+                                <a class="arrow-only"
+                                 href="`+value.post_url+`">Read More</a>
+                            </div>
 
                                 </div>
                                 </div>
@@ -138,7 +149,8 @@
                         'offset': total(),
                         'post_type': post_type,
                         'orderby': orderby,
-                        'order': order
+                        'order': order,
+                        'sub_title': sub_title
                     }
                     sendToServer(data);
                 })

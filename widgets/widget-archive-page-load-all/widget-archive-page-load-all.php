@@ -49,6 +49,7 @@ class Widget_Archive_Page_Load_All extends SiteOrigin_Widget{
             $query_post_type = stripslashes($_POST['post_type']);
             $query_orderby = stripslashes($_POST['orderby']);
             $query_order = stripslashes($_POST['order']);
+            $query_sub_title = stripslashes($_POST['sub_title']);
 
             $query = array(
                 'post_type' => $query_post_type,
@@ -71,6 +72,8 @@ class Widget_Archive_Page_Load_All extends SiteOrigin_Widget{
                           endif;
                           $temp_array['title'] = $post->post_title;
                           $temp_array['post_excerpt'] = $post->post_excerpt;
+                          $temp_array['post_url'] = get_permalink($post->ID);
+                          $temp_array['sub_title'] = $query_sub_title;
                          array_push($json_reply, $temp_array);
                      }
                 endif;

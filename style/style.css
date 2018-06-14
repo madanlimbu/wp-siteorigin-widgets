@@ -426,13 +426,13 @@ a:visited{
     -webkit-box-orient: vertical;
 }
 .archive-page-load-all.show-posts-widget .show-posts-container>.thumbnails-container {
-    margin-bottom: 300px;
+    margin-bottom: 365px;
     overflow: hidden;
 }
 .archive-page-load-all.show-posts-widget .absolute-text-container {
     position: absolute;
     width: 100%;
-    min-height: 300px;
+    min-height: 365px;
 }
 .row.archive-page-load-all-widget-posts {
     margin-bottom: 60px;
@@ -442,4 +442,32 @@ a:visited{
     margin-top: 10px;
     margin-bottom: 10px;
     font-weight: 700;
+}
+.archive-page-load-all .col-with-bottom-border{
+    border-bottom: 1px solid #C7C7C7;
+    margin-bottom: 60px;
+}
+.archive-page-load-all .read_arrow{
+    margin: 40px 0;
+    position: absolute;
+    bottom: 0;
+}
+.archive-page-load-all .read_arrow>a{
+    text-indent: -999rem;
+    border: none;
+    color: transparent;
+    background-image: url(image/button_arrow.svg);
+    background-repeat: no-repeat;
+    background-size: auto 15px !important;
+    background-position: calc(0%) 50%;
+    padding: 0;
+    min-width: 0;
+    width: 20px;
+    height: 20px;
+}
+.archive-page-load-all .show-posts-widget .text-container{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
