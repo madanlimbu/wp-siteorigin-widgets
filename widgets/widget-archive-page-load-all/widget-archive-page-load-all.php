@@ -32,6 +32,10 @@ class Widget_Archive_Page_Load_All extends SiteOrigin_Widget{
                 'type' => 'text',
                 'label' => __('Order Post (DESC or ASC)', 'widget-form-fields-text-domain'),
                 'default' => 'DESC'
+            ),
+            'post_sub_title' => array(
+                'type' => 'text',
+                'label' => __('Post sub-title to display', 'widget-form-fields-text-domain')
             )
         );
 

@@ -16,6 +16,10 @@ class Widget_Show_Posts extends SiteOrigin_Widget{
                 'type' => 'posts',
                 'label' => __('Show some of the posts from the posts type', 'widget-form-fields-text-domain'),
             ),
+            'post_sub_title' => array(
+                'type' => 'text',
+                'label' => __('Sub Title for the Post', 'widget-form-fields-text-domain')
+            ),
             'button' => array(
                 'type' => 'section',
                 'label' => __( 'Button At bottom' , 'widget-form-fields-text-domain' ),

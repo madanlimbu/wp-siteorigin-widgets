@@ -29,7 +29,8 @@
                         <?php endif; ?>
                         <div class="absolute-text-container">
                         <div class="text-container">
-                         <h5><?php if(has_excerpt()) : echo get_the_excerpt(); endif; ?></h5>
+                            <h5><?php echo $instance['post_sub_title'] ?></h5>
+                          <!--  <h5><?php //if(has_excerpt()) : echo get_the_excerpt(); endif; ?></h5> -->
                          <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
                         </div><!-- .absolute-text-container -->
                         </div><!-- .text-container -->
