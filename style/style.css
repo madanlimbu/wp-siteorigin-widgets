@@ -491,3 +491,20 @@ a:visited{
     max-width: 100%;
     vertical-align: bottom;
 }
+
+/*SOCIAL-SHARE MAILTO LINKEDIN PRINTER*/
+.social-share-widget.container .social-share-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.social-share-widget.container .icon-share-buttons{
+    margin: 0px 10px;
+}
+.social-share-widget.container .icon-share-buttons img{
+    width: 22px;
+}
+.social-share-widget.container .icon-share-buttons a{
+    display: inline-block;
+}
